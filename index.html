@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Welcome to the Plex server</title>
+<title>Welcome to Hunter's Plex (rockethunter)</title>
 <meta name="description" content="Everything you need to start watching.">
 
 <!--
@@ -66,12 +66,17 @@ tailwind.config = {
       <span class="h-1.5 w-1.5 rounded-full bg-gold"></span> You've been invited
     </p>
     <h1 class="text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
-      Welcome to the<br><span class="text-gold">Plex server</span>.
+      Welcome to Hunter's Plex,<br>aka <span class="text-gold">rockethunter</span>.
     </h1>
     <p class="mt-5 max-w-xl text-lg leading-relaxed text-slate-400">
-      Movies, TV and kids' shows, streaming to whatever you already own.
-      It's free for you, it takes about five minutes to set up, and this page
-      covers everything.
+      Think of it as my own private Netflix. There's a hard drive at my place holding
+      my movie and TV collection, and Plex is the app that sits on top of it: the same
+      rows of posters, the same resume-where-you-left-off, the same everything. It just
+      happens to be my collection instead of Netflix's.
+    </p>
+    <p class="mt-4 max-w-xl text-lg leading-relaxed text-slate-400">
+      It's free for you, it takes about five minutes to set up, and this page covers
+      everything.
     </p>
     <div class="mt-9 flex flex-col gap-3 sm:flex-row">
       <a href="#start"
@@ -91,7 +96,7 @@ tailwind.config = {
 
   <!-- ACCEPT YOUR INVITE -->
   <section id="start" class="scroll-mt-8 pt-16">
-    <div class="mb-4 h-0.5 w-10 rounded bg-gold"></div>
+    <p class="mb-3 inline-block rounded-md bg-gold/15 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-goldsoft">Step 1</p>
     <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Accept your invite</h2>
     <p class="mt-4 text-slate-400">Do this first. Nothing else works until you have.</p>
 
@@ -126,23 +131,19 @@ tailwind.config = {
     <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">You don't pay for anything</h2>
     <div class="mt-6 rounded-xl border border-gold/25 bg-gold/[0.06] p-6">
       <p class="leading-relaxed text-slate-300">
-        Plex will occasionally try to sell you a <strong class="text-white">Plex Pass</strong> or a
-        <strong class="text-white">Remote Watch Pass</strong>. You don't need either one.
+        Plex will try to sell you a <strong class="text-white">Plex Pass</strong> while you're
+        signing up. Ignore it and close the prompt.
       </p>
       <p class="mt-3 leading-relaxed text-slate-400">
-        Streaming this library from outside my house requires that <em>the person running the
-        server</em> has a Plex Pass, and I've got the lifetime one. That covers everybody I
-        share with. So if you see an upgrade prompt, close it and keep going.
-      </p>
-      <p class="mt-3 leading-relaxed text-slate-400">
-        Only pay Plex if you want their own extras. Nothing on this server needs it.
+        I already bought the lifetime pass, and mine is the only one that matters. It covers
+        everybody I share with. You will never need to pay Plex a cent to watch my stuff.
       </p>
     </div>
   </section>
 
   <!-- INSTALL THE APP -->
   <section class="pt-16">
-    <div class="mb-4 h-0.5 w-10 rounded bg-gold"></div>
+    <p class="mb-3 inline-block rounded-md bg-gold/15 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-goldsoft">Step 2</p>
     <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Install the app</h2>
     <p class="mt-4 text-slate-400">
       Find your device below and tap it. The app is free and it's just called
@@ -256,24 +257,40 @@ tailwind.config = {
   <!-- SIGN IN AS YOU -->
   <section class="pt-16">
     <div class="mb-4 h-0.5 w-10 rounded bg-gold"></div>
-    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Sign in with <em>your</em> account</h2>
-    <div class="mt-6 rounded-xl border border-edge bg-panel p-6">
-      <p class="leading-relaxed text-slate-300">
-        Always sign in with <strong class="text-white">your own Plex account</strong>, the one you
-        made when you accepted the invite. Never mine.
-      </p>
-      <p class="mt-3 leading-relaxed text-slate-400">
-        That's what keeps your watch history, your resume-where-you-left-off and your
-        watchlist yours. Sharing one login means everybody fights over the same
-        "continue watching" row.
-      </p>
-      <hr class="my-5 border-edge">
-      <p class="text-sm font-semibold text-white">Where's the stuff?</p>
-      <p class="mt-2 text-sm leading-relaxed text-slate-400">
-        Once you're in, look for the sidebar or the top menu. The shared libraries appear
-        under the server name, alongside Plex's own free channels. If you land on a wall of
-        ads and live TV, you're on Plex's own content: switch to the server in the menu.
-      </p>
+    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Find my libraries</h2>
+    <p class="mt-4 text-slate-400">
+      Sign in with <strong class="text-slate-200">your own Plex account</strong>, the one you made
+      when you accepted the invite. Never mine. That's what keeps your watch history and your
+      resume-where-you-left-off yours.
+    </p>
+
+    <div class="mt-6 space-y-3">
+      <div class="rounded-xl border border-edge bg-panel p-5">
+        <p class="font-semibold text-white">Ignore Plex's own libraries</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-400">
+          The first thing you'll see is Plex's own free stuff: live TV, ad-supported movies,
+          a wall of channels. None of that is mine and <strong class="text-slate-300">all of it
+          has ads</strong>. You can ignore the lot of it.
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-edge bg-panel p-5">
+        <p class="font-semibold text-white">Look for <span class="text-gold">rockethunter</span></p>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-400">
+          That's my server. It's in the sidebar on a computer, or under the menu on a TV or
+          phone. My three libraries sit under that name: Movies, TV Shows and Kids TV. Nothing
+          in them has ads.
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-edge bg-panel p-5">
+        <p class="font-semibold text-white">Pin all three</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-400">
+          Each library has a pin icon next to it. Pin Movies, TV Shows and Kids TV and they'll
+          sit right at the top of your sidebar every time you open Plex, so you never have to
+          go hunting past the ad channels again.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -282,7 +299,10 @@ tailwind.config = {
   <section class="pt-16">
     <div class="mb-4 h-0.5 w-10 rounded bg-gold"></div>
     <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">What's on the server</h2>
-    <p class="mt-4 text-slate-400">Three libraries. Everything is ad-free and there's nothing to skip.</p>
+    <p class="mt-4 text-slate-400">
+      Three libraries, all under <span class="text-gold">rockethunter</span>. Everything is
+      ad-free and there's nothing to skip.
+    </p>
 
     <div class="mt-6 grid gap-3 sm:grid-cols-3">
       <div class="rounded-xl border border-edge bg-panel p-5">
@@ -320,19 +340,18 @@ tailwind.config = {
   <!-- REQUEST -->
   <section id="request" class="scroll-mt-8 pt-16">
     <div class="mb-4 h-0.5 w-10 rounded bg-gold"></div>
-    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Ask for something</h2>
+    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Want something added?</h2>
 
     <div class="relative mt-6 overflow-hidden rounded-2xl border border-gold/30 bg-gradient-to-br from-gold/[0.12] via-panel to-purple-600/[0.08] p-7 sm:p-9">
       <p class="text-lg leading-relaxed text-slate-200">
-        Not there? Just ask. Takes about ten seconds and
-        <strong class="text-white">it doesn't ask who you are</strong>. No name, no email,
-        no account.
+        If a movie or show isn't in the library, tell me and I'll add it. I'm always happy to
+        grow the collection, so ask away.
       </p>
       <p class="mt-3 leading-relaxed text-slate-400">
-        <strong class="text-slate-200">Use it any time, as often as you like.</strong> There's no
-        limit and no such thing as a request that's too obscure, too old or too embarrassing.
-        If something pops into your head months from now, send it then. Bookmark this page and
-        the link is always right here.
+        You type a title, I put it on the drive, it turns up in your Plex. That's the whole
+        thing. The form takes ten seconds and
+        <strong class="text-slate-200">doesn't ask who you are</strong>: no name, no email, no
+        account. Use it as often as you like.
       </p>
 
       <!-- [REQUEST_URL] the one link to change if you ever move off Tally -->
@@ -343,7 +362,7 @@ tailwind.config = {
       </a>
 
       <p class="mt-5 text-sm text-slate-500">
-        I add things by hand, so give it a few days. Big or brand-new titles can take longer.
+        I add things by hand, so give it a few days. Brand-new releases can take longer.
       </p>
     </div>
   </section>
@@ -392,7 +411,7 @@ tailwind.config = {
         </summary>
         <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
           <p>You're looking at Plex's own free content, not mine. Open the sidebar or top menu and look
-             for the server name. My libraries sit under it.</p>
+             for <strong class="text-slate-200">rockethunter</strong>. My three libraries sit under it.</p>
           <p class="mt-3">If it isn't listed at all, you're probably signed into the wrong account, or the
              invite was never accepted. Sign out, sign back in as yourself, restart the app.</p>
         </div>
