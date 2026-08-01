@@ -49,6 +49,16 @@ tailwind.config = {
   a:focus-visible, summary:focus-visible {
     outline: 2px solid #e5a00d; outline-offset: 3px; border-radius: 6px;
   }
+  /* the rocket drifts. two keyframe sets because it's centred with a transform from sm up */
+  @keyframes drift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+  @keyframes drift-centred { 0%, 100% { transform: translateY(-50%); } 50% { transform: translateY(calc(-50% - 14px)); } }
+  .rocket { animation: drift 6s ease-in-out infinite; }
+  @media (min-width: 640px) {
+    .rocket { animation-name: drift-centred; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rocket { animation: none; }
+  }
 </style>
 </head>
 
@@ -62,19 +72,26 @@ tailwind.config = {
        class="pointer-events-none absolute -bottom-32 -right-24 h-72 w-72 rounded-full bg-purple-600/20 blur-[100px]"></div>
 
   <div class="relative mx-auto max-w-3xl px-5 pt-20 pb-16 sm:pt-28 sm:pb-20">
+
+    <!-- ponytail: one img, in flow on mobile, absolute and vertically centred from sm up.
+         Background was flood-filled to real transparency, so no blend mode needed. -->
+    <img src="rockethunter.png" alt="The rockethunter rocket" width="640" height="579"
+         class="rocket pointer-events-none mb-8 w-40 drop-shadow-[0_0_35px_rgba(229,160,13,0.28)]
+                sm:absolute sm:right-0 sm:top-1/2 sm:mb-0 sm:w-56 sm:-translate-y-1/2 lg:-right-6 lg:w-72">
+
     <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-medium tracking-wide text-goldsoft">
       <span class="h-1.5 w-1.5 rounded-full bg-gold"></span> You've been invited
     </p>
     <h1 class="text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
       Welcome to Hunter's Plex,<br>aka <span class="text-gold">rockethunter</span>.
     </h1>
-    <p class="mt-5 max-w-xl text-lg leading-relaxed text-slate-400">
+    <p class="mt-5 max-w-xl text-lg leading-relaxed text-slate-400 lg:max-w-[27rem]">
       Think of it as my own private Netflix. There's a hard drive at my place holding
       my movie and TV collection, and Plex is the app that sits on top of it: the same
       rows of posters, the same resume-where-you-left-off, the same everything. It just
       happens to be my collection instead of Netflix's.
     </p>
-    <p class="mt-4 max-w-xl text-lg leading-relaxed text-slate-400">
+    <p class="mt-4 max-w-xl text-lg leading-relaxed text-slate-400 lg:max-w-[27rem]">
       It's free for you, it takes about five minutes to set up, and this page covers
       everything.
     </p>
