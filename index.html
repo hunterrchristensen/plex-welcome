@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Welcome to the Plex server</title>
+<meta name="description" content="Everything you need to start watching.">
+
+<!--
+  ==================================================================
+  EDIT ME. The only three things you ever need to change.
+  Each appears EXACTLY ONCE below. Search for the marker.
+
+    [REQUEST_URL]    the Tally form link behind the big button
+    [CONTACT_EMAIL]  where "email me" goes
+    [LIBRARIES]      the three library cards
+
+  Swapping Tally for Seerr later = change one href.
+  ==================================================================
+-->
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        gold: '#e5a00d',
+        goldsoft: '#f5c542',
+        ink: '#0b0c10',
+        panel: '#15171e',
+        edge: '#242833',
+      },
+      fontFamily: {
+        sans: ['ui-sans-serif','system-ui','-apple-system','Segoe UI','Roboto','Helvetica Neue','Arial','sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<style>
+  body { -webkit-font-smoothing: antialiased; }
+  /* rotate the chevron when a card opens; replaces ~20 lines of accordion JS */
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .chev { transform: rotate(90deg); }
+  .chev { transition: transform .18s ease; }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid #e5a00d; outline-offset: 3px; border-radius: 6px;
+  }
+</style>
+</head>
+
+<body class="bg-ink text-slate-200 font-sans antialiased">
+
+<!-- HERO -->
+<header class="relative overflow-hidden border-b border-edge">
+  <div aria-hidden="true"
+       class="pointer-events-none absolute -top-40 left-1/2 h-96 w-[42rem] -translate-x-1/2 rounded-full bg-gold/20 blur-[110px]"></div>
+  <div aria-hidden="true"
+       class="pointer-events-none absolute -bottom-32 -right-24 h-72 w-72 rounded-full bg-purple-600/20 blur-[100px]"></div>
+
+  <div class="relative mx-auto max-w-3xl px-5 pt-20 pb-16 sm:pt-28 sm:pb-20">
+    <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-medium tracking-wide text-goldsoft">
+      <span class="h-1.5 w-1.5 rounded-full bg-gold"></span> You've been invited
+    </p>
+    <h1 class="text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
+      Welcome to the<br><span class="text-gold">Plex server</span>.
+    </h1>
+    <p class="mt-5 max-w-xl text-lg leading-relaxed text-slate-400">
+      Movies, TV and kids' shows, streaming to whatever you already own.
+      It's free for you, it takes about five minutes to set up, and this page
+      covers everything.
+    </p>
+    <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+      <a href="#start"
+         class="inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-6 py-3.5 font-semibold text-ink transition hover:bg-goldsoft">
+        Start here
+        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v9.586l3.293-3.293a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L9 13.586V4a1 1 0 011-1z" clip-rule="evenodd"/></svg>
+      </a>
+      <a href="#request"
+         class="inline-flex items-center justify-center gap-2 rounded-xl border border-edge bg-panel px-6 py-3.5 font-semibold text-slate-200 transition hover:border-gold/40 hover:text-white">
+        Request a movie or show
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="mx-auto max-w-3xl px-5 pb-24">
+
+  <!-- ACCEPT YOUR INVITE -->
+  <section id="start" class="scroll-mt-8 pt-16">
+    <div class="mb-4 h-0.5 w-10 rounded bg-gold"></div>
+    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Accept your invite</h2>
+    <p class="mt-4 text-slate-400">Do this first. Nothing else works until you have.</p>
+
+    <ol class="mt-6 space-y-4">
+      <li class="rounded-xl border border-edge bg-panel p-5">
+        <p class="font-semibold text-white">Check your email for an invite from Plex.</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-400">
+          Subject line is something like <em>"You've been invited to share a library."</em>
+          If it's not in your inbox, check spam. It hides there constantly.
+        </p>
+      </li>
+      <li class="rounded-xl border border-edge bg-panel p-5">
+        <p class="font-semibold text-white">Click <span class="text-gold">Accept</span> and make a free Plex account.</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-400">
+          Email and a password, or just sign in with Google or Apple. It's free: no card,
+          no trial, nothing to cancel.
+        </p>
+      </li>
+      <li class="rounded-xl border border-edge bg-panel p-5">
+        <p class="font-semibold text-white">That's the hard part done.</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-400">
+          The library is now attached to your account and will show up in the Plex app on
+          every device you sign into.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- IT'S FREE -->
+  <section class="pt-16">
+    <div class="mb-4 h-0.5 w-10 rounded bg-gold"></div>
+    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">You don't pay for anything</h2>
+    <div class="mt-6 rounded-xl border border-gold/25 bg-gold/[0.06] p-6">
+      <p class="leading-relaxed text-slate-300">
+        Plex will occasionally try to sell you a <strong class="text-white">Plex Pass</strong> or a
+        <strong class="text-white">Remote Watch Pass</strong>. You don't need either one.
+      </p>
+      <p class="mt-3 leading-relaxed text-slate-400">
+        Streaming this library from outside my house requires that <em>the person running the
+        server</em> has a Plex Pass, and I've got the lifetime one. That covers everybody I
+        share with. So if you see an upgrade prompt, close it and keep going.
+      </p>
+      <p class="mt-3 leading-relaxed text-slate-400">
+        Only pay Plex if you want their own extras. Nothing on this server needs it.
+      </p>
+    </div>
+  </section>
+
+  <!-- INSTALL THE APP -->
+  <section class="pt-16">
+    <div class="mb-4 h-0.5 w-10 rounded bg-gold"></div>
+    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Install the app</h2>
+    <p class="mt-4 text-slate-400">
+      Find your device below and tap it. The app is free and it's just called
+      <strong class="text-slate-200">Plex</strong> in every store.
+    </p>
+
+    <div class="mt-6 space-y-2.5">
+
+      <details class="group rounded-xl border border-edge bg-panel open:border-gold/30">
+        <summary class="flex items-center gap-3 p-5">
+          <svg class="chev h-4 w-4 shrink-0 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-white">Roku</span>
+        </summary>
+        <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
+          <p>Home, then <strong class="text-slate-200">Streaming Channels</strong>, then search
+             <strong class="text-slate-200">Plex</strong> and add the channel. Open it and choose
+             <strong class="text-slate-200">Sign In</strong>.</p>
+          <p class="mt-3">It shows you a short code. On your phone or laptop go to
+            <span class="rounded bg-ink px-1.5 py-0.5 font-mono text-goldsoft">plex.tv/link</span>,
+            sign in, and type the code. The TV signs itself in.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-edge bg-panel open:border-gold/30">
+        <summary class="flex items-center gap-3 p-5">
+          <svg class="chev h-4 w-4 shrink-0 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-white">Apple TV</span>
+        </summary>
+        <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
+          <p>App Store on the Apple TV, search <strong class="text-slate-200">Plex</strong>, hit Get.</p>
+          <p class="mt-3">Open it, pick <strong class="text-slate-200">Sign In</strong>, then enter the code it displays at
+            <span class="rounded bg-ink px-1.5 py-0.5 font-mono text-goldsoft">plex.tv/link</span> on your phone.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-edge bg-panel open:border-gold/30">
+        <summary class="flex items-center gap-3 p-5">
+          <svg class="chev h-4 w-4 shrink-0 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-white">Fire TV / Fire Stick</span>
+        </summary>
+        <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
+          <p>Search <strong class="text-slate-200">Plex</strong> from the Fire TV home screen (the mic button works fine) and download it.</p>
+          <p class="mt-3">Open it, choose <strong class="text-slate-200">Sign In</strong>, and enter the code at
+            <span class="rounded bg-ink px-1.5 py-0.5 font-mono text-goldsoft">plex.tv/link</span>.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-edge bg-panel open:border-gold/30">
+        <summary class="flex items-center gap-3 p-5">
+          <svg class="chev h-4 w-4 shrink-0 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-white">Android TV / Google TV / NVIDIA Shield</span>
+        </summary>
+        <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
+          <p>Google Play Store on the TV, search <strong class="text-slate-200">Plex</strong>, install it.</p>
+          <p class="mt-3">Open it, choose <strong class="text-slate-200">Sign In</strong>, then enter the code at
+            <span class="rounded bg-ink px-1.5 py-0.5 font-mono text-goldsoft">plex.tv/link</span>.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-edge bg-panel open:border-gold/30">
+        <summary class="flex items-center gap-3 p-5">
+          <svg class="chev h-4 w-4 shrink-0 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-white">Samsung / LG / Vizio smart TV</span>
+        </summary>
+        <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
+          <p>Open your TV's app store (Samsung calls it <em>Apps</em>, LG calls it <em>Content Store</em>) and search <strong class="text-slate-200">Plex</strong>.</p>
+          <p class="mt-3">Sign in with the code at
+            <span class="rounded bg-ink px-1.5 py-0.5 font-mono text-goldsoft">plex.tv/link</span>.</p>
+          <p class="mt-3">Older TVs sometimes don't have Plex any more. If yours doesn't, a $30 Fire Stick or Roku is
+            genuinely the easiest fix. You can also just cast from your phone.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-edge bg-panel open:border-gold/30">
+        <summary class="flex items-center gap-3 p-5">
+          <svg class="chev h-4 w-4 shrink-0 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-white">iPhone / iPad</span>
+        </summary>
+        <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
+          <p>App Store, then <strong class="text-slate-200">Plex: Stream Movies &amp; TV</strong>, then sign in with your own account. No code needed here, you just type your login.</p>
+          <p class="mt-3">You can AirPlay from here to most TVs if you'd rather not install anything on the TV itself.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-edge bg-panel open:border-gold/30">
+        <summary class="flex items-center gap-3 p-5">
+          <svg class="chev h-4 w-4 shrink-0 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-white">Android phone / tablet</span>
+        </summary>
+        <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
+          <p>Google Play, then <strong class="text-slate-200">Plex: Stream Movies &amp; TV</strong>, then sign in with your own account.</p>
+          <p class="mt-3">Chromecast works from here too.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-edge bg-panel open:border-gold/30">
+        <summary class="flex items-center gap-3 p-5">
+          <svg class="chev h-4 w-4 shrink-0 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-white">Laptop or desktop (nothing to install)</span>
+        </summary>
+        <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
+          <p>Go to <a href="https://app.plex.tv" target="_blank" rel="noopener"
+             class="font-medium text-gold underline decoration-gold/40 underline-offset-4 hover:decoration-gold">app.plex.tv</a>
+             and sign in. Works in any browser. This is the fastest way to check everything's working.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- SIGN IN AS YOU -->
+  <section class="pt-16">
+    <div class="mb-4 h-0.5 w-10 rounded bg-gold"></div>
+    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Sign in with <em>your</em> account</h2>
+    <div class="mt-6 rounded-xl border border-edge bg-panel p-6">
+      <p class="leading-relaxed text-slate-300">
+        Always sign in with <strong class="text-white">your own Plex account</strong>, the one you
+        made when you accepted the invite. Never mine.
+      </p>
+      <p class="mt-3 leading-relaxed text-slate-400">
+        That's what keeps your watch history, your resume-where-you-left-off and your
+        watchlist yours. Sharing one login means everybody fights over the same
+        "continue watching" row.
+      </p>
+      <hr class="my-5 border-edge">
+      <p class="text-sm font-semibold text-white">Where's the stuff?</p>
+      <p class="mt-2 text-sm leading-relaxed text-slate-400">
+        Once you're in, look for the sidebar or the top menu. The shared libraries appear
+        under the server name, alongside Plex's own free channels. If you land on a wall of
+        ads and live TV, you're on Plex's own content: switch to the server in the menu.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT'S ON IT -->
+  <!-- [LIBRARIES] the three cards below. Add or rename freely. -->
+  <section class="pt-16">
+    <div class="mb-4 h-0.5 w-10 rounded bg-gold"></div>
+    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">What's on the server</h2>
+    <p class="mt-4 text-slate-400">Three libraries. Everything is ad-free and there's nothing to skip.</p>
+
+    <div class="mt-6 grid gap-3 sm:grid-cols-3">
+      <div class="rounded-xl border border-edge bg-panel p-5">
+        <div class="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-gold/10 text-gold">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.5h16.5v15H3.75zM3.75 9h16.5M3.75 15h16.5M8.25 4.5v15M15.75 4.5v15"/></svg>
+        </div>
+        <h3 class="font-semibold text-white">Movies</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-400">
+          New releases mixed in with older favourites. Growing all the time.
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-edge bg-panel p-5">
+        <div class="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-gold/10 text-gold">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 7.5h16.5v11H3.75zM8.25 3.75L12 7.5l3.75-3.75"/></svg>
+        </div>
+        <h3 class="font-semibold text-white">TV Shows</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-400">
+          Full series, mostly complete seasons. It remembers your place across every device.
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-edge bg-panel p-5">
+        <div class="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-gold/10 text-gold">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M9 9.75h.008v.008H9V9.75zm6 0h.008v.008H15V9.75zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="font-semibold text-white">Kids TV</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-400">
+          Family-safe, no ads, nothing that needs supervising. Fine to just leave running.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUEST -->
+  <section id="request" class="scroll-mt-8 pt-16">
+    <div class="mb-4 h-0.5 w-10 rounded bg-gold"></div>
+    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Ask for something</h2>
+
+    <div class="relative mt-6 overflow-hidden rounded-2xl border border-gold/30 bg-gradient-to-br from-gold/[0.12] via-panel to-purple-600/[0.08] p-7 sm:p-9">
+      <p class="text-lg leading-relaxed text-slate-200">
+        Not there? Just ask. Takes about ten seconds and
+        <strong class="text-white">it doesn't ask who you are</strong>. No name, no email,
+        no account.
+      </p>
+      <p class="mt-3 leading-relaxed text-slate-400">
+        <strong class="text-slate-200">Use it any time, as often as you like.</strong> There's no
+        limit and no such thing as a request that's too obscure, too old or too embarrassing.
+        If something pops into your head months from now, send it then. Bookmark this page and
+        the link is always right here.
+      </p>
+
+      <!-- [REQUEST_URL] the one link to change if you ever move off Tally -->
+      <a href="REQUEST_URL_PLACEHOLDER" target="_blank" rel="noopener"
+         class="mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-7 py-4 text-lg font-semibold text-ink transition hover:bg-goldsoft">
+        Request a movie or show
+        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a1 1 0 011-1h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L13.586 11H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+      </a>
+
+      <p class="mt-5 text-sm text-slate-500">
+        I add things by hand, so give it a few days. Big or brand-new titles can take longer.
+      </p>
+    </div>
+  </section>
+
+  <!-- TROUBLESHOOTING -->
+  <section class="pt-16">
+    <div class="mb-4 h-0.5 w-10 rounded bg-gold"></div>
+    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Still stuck?</h2>
+    <p class="mt-4 text-slate-400">
+      Nine times out of ten it's the first one. Force-close the app and reopen it before
+      anything else.
+    </p>
+
+    <div class="mt-6 space-y-2.5">
+
+      <details class="group rounded-xl border border-edge bg-panel open:border-gold/30">
+        <summary class="flex items-center gap-3 p-5">
+          <svg class="chev h-4 w-4 shrink-0 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-white">It won't play, or it just spins</span>
+        </summary>
+        <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
+          <p>Close the app completely and reopen it. Then try a different show. If that one plays,
+             the file's the problem and I'll replace it, so tell me which one.</p>
+          <p class="mt-3">If nothing plays, my server might be restarting. Give it ten minutes, then
+             restart the app once more.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-edge bg-panel open:border-gold/30">
+        <summary class="flex items-center gap-3 p-5">
+          <svg class="chev h-4 w-4 shrink-0 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-white">It keeps buffering</span>
+        </summary>
+        <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
+          <p>Restart the app first. If it's still stuttering, hit the settings icon while something's
+             playing and pick a lower quality. It'll look slightly softer but it won't stop.</p>
+          <p class="mt-3">On hotel or mobile data, drop it right down. On good home wifi you can leave it
+             on the highest setting.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-edge bg-panel open:border-gold/30">
+        <summary class="flex items-center gap-3 p-5">
+          <svg class="chev h-4 w-4 shrink-0 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-white">I can't find the server, or I only see ads and live TV</span>
+        </summary>
+        <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
+          <p>You're looking at Plex's own free content, not mine. Open the sidebar or top menu and look
+             for the server name. My libraries sit under it.</p>
+          <p class="mt-3">If it isn't listed at all, you're probably signed into the wrong account, or the
+             invite was never accepted. Sign out, sign back in as yourself, restart the app.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-edge bg-panel open:border-gold/30">
+        <summary class="flex items-center gap-3 p-5">
+          <svg class="chev h-4 w-4 shrink-0 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-white">Subtitles aren't showing up</span>
+        </summary>
+        <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
+          <p>While it's playing, tap the screen and look for the speech-bubble icon. Pick an English track
+             and it sticks for everything you watch after.</p>
+          <p class="mt-3">Some files genuinely don't have subtitles. Restart the app first in case it just
+             didn't load them. If there's still nothing there, tell me and I'll sort that title out.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-edge bg-panel open:border-gold/30">
+        <summary class="flex items-center gap-3 p-5">
+          <svg class="chev h-4 w-4 shrink-0 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-white">The audio's in the wrong language, or the voices are quiet</span>
+        </summary>
+        <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
+          <p>Same menu as subtitles: tap the screen while it's playing and look for the audio track
+             selector, then pick the English one.</p>
+          <p class="mt-3">Quiet dialogue with loud explosions usually means a surround track playing through
+             TV speakers. Switch to the stereo track if there is one. Restart the app if the menu looks empty.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-edge bg-panel open:border-gold/30">
+        <summary class="flex items-center gap-3 p-5">
+          <svg class="chev h-4 w-4 shrink-0 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-white">Can I download things to watch on a plane?</span>
+        </summary>
+        <div class="border-t border-edge px-5 py-4 text-sm leading-relaxed text-slate-400">
+          <p>On phones and tablets, yes. Look for the download arrow on a movie or episode, and do it on
+             wifi before you leave.</p>
+          <p class="mt-3">If the arrow isn't there, restart the app. Still missing? Message me and I'll flip
+             the setting for you.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="pt-16">
+    <div class="mb-4 h-0.5 w-10 rounded bg-gold"></div>
+    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">If it's still broken</h2>
+    <div class="mt-6 rounded-xl border border-edge bg-panel p-6">
+      <p class="leading-relaxed text-slate-400">
+        Tried the restart and it's still not working? Tell me what device you're on and what
+        you were trying to watch. That's usually enough for me to fix it from here.
+      </p>
+      <!-- [CONTACT_EMAIL] -->
+      <a href="mailto:hunter.r.christensen@gmail.com?subject=Plex%20help"
+         class="mt-5 inline-flex items-center gap-2 rounded-xl border border-edge bg-ink px-5 py-3 font-semibold text-slate-200 transition hover:border-gold/40 hover:text-white">
+        <svg class="h-4 w-4 text-gold" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+        hunter.r.christensen@gmail.com
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="border-t border-edge">
+  <div class="mx-auto max-w-3xl px-5 py-8">
+    <p class="text-sm text-slate-500">
+      Bookmark this page. The request link and the fixes are always here.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
